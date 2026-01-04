@@ -35,7 +35,7 @@
 |키|데이터타입|설명|
 |:---|:---|:---|
 |id|Long|아이디|
-|connectedAt|LocalDateTime|접속일자|
+|connected_at|LocalDateTime|접속일자|
 
 ## 🏃‍♂️‍➡️ 실행 방법
 실행 전 아래와 같이 `.env`를 추가하시고 설정하시길 바랍니다.<br>

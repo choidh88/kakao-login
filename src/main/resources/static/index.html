@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello~</title>
+</head>
+<body>
+    <button onclick="openKakaoLogin();">카카오 로그인</button>
+
+    <br>
+
+    <label for="id">아이디: </label>
+    <input id="id" type="text" readonly>
+
+    <br>
+
+    <label for="connected-at">접속일: </label>
+    <input id="connected-at" type="text" readonly>
+
+    <script defer>
+        async function main() {
+            const id = document.getElementById("id");
+            const connectedAt = document.getElementById("connected-at");
+
+            const response = await fetch("/me");
+            const data = await response.json();
+
+            console.log(data);
+
+            id.value = data.id == null ? "없음" : data.id;
+            connectedAt.value = data.connected_at == null ? "없음" : data.connected_at;
+        }
+
+        main();
+
+        function openKakaoLogin() {
+            location.href = "/login";
+        }
+    </script>
+</body>
+</html>
